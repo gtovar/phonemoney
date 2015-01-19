@@ -1,0 +1,20 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <%= link_to "Recompensas Tec", root_path, class: "navbar-brand" %>
+  </div>
+  <div id="navbar" class="collapse navbar-collapse">
+    <% if admin_signed_in? %>
+      <p class="navbar-text navbar-right">Signed in as <%= current_admin.email %>  <%= link_to " Salir", destroy_admin_session_path, :method => :delete %>  </p>
+    <% else %>
+      <p class="navbar-text navbar-right"> <%= link_to "Log in", new_admin_session_path %>  </p>
+    <% end %>
+  </div>
+</div>
+</nav>
