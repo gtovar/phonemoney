@@ -3,19 +3,23 @@
   <head>
     <title>Recompensastec</title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-
+  <body class="skin-blue">
+    <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
     <%= render 'shared/navbar' %>
-    <div class="container">
-      <% if notice %>
-    <div class="alert alert-success" role="alert">
-      <%= notice %>
-    </div>
-  <% end %>
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+      <%= render 'shared/sidebar' %>
+      <!-- Right side column. Contains the navbar and content of the page -->
+      <aside class="right-side">
       <%= yield %>
-    </div>
+      </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   </body>
 </html>
