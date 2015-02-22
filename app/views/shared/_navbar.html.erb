@@ -234,7 +234,11 @@
       </div>
       <div class="pull-right">
 
+      <% if user_signed_in? %>
+        <%= link_to "Salir",destroy_user_session_path, class: "btn btn-default btn-flat", :method => :delete %>
+      <% else %>
         <%= link_to "Salir",destroy_admin_session_path, class: "btn btn-default btn-flat", :method => :delete %>
+      <% end %>
       </div>
       </li>
     </ul>

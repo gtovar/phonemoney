@@ -1,5 +1,5 @@
-<div class="form-box" id="login-box">
-  <div class="header">Registrarse</div>
+<div class="form-box" id="login-box" >
+  <div class="header">Aministrador</div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="body bg-gray">
@@ -17,7 +17,7 @@
 
     <div class="footer">
       <%= f.submit "Entrar", class: "btn bg-olive btn-block" %>
-      <%= render "devise/shared/links" %>
+      <%= render "admins/shared/links" %>
     </div>
   <% end %>
 
